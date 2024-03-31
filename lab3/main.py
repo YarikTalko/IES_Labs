@@ -9,7 +9,7 @@ from datetime import datetime
 import paho.mqtt.client as mqtt
 
 from app.adapters.store_api_adapter import StoreApiAdapter
-from app.entities.agent_data import AgentData, AccelerometerData, GpsData
+# from app.entities.agent_data import EdgeData, AccelerometerData, GpsData
 from app.entities.processed_agent_data import ProcessedAgentData
 from config import (
     STORE_API_BASE_URL,
@@ -91,29 +91,29 @@ def on_message(client, userdata, msg):
         logging.info(f"Error processing MQTT message: {e}")
 
 
-def emulate_request_of_mqtt():
-    current_datetime = datetime.now()
-    formatted_date_time = current_datetime.strftime("%Y-%m-%dT%H:%M:%S.%f")
-    processed_data = {
-        "road_state": random.choice(["Good", "Bad"]),
-        "agent_data": {
-            "accelerometer": {
-                "x": random.randint(-50, 50),
-                "y": random.randint(-50, 50),
-                "z": random.randint(-50, 50)
-            },
-            "gps": {
-                "latitude": random.random() * 10,
-                "longitude": random.random() * 10
-            },
-            "timestamp": formatted_date_time
-        }
-    }
-    json_string = json.dumps(processed_data)
-    while True:
-        # Publish the encoded payload
-        client.publish(MQTT_TOPIC, payload=json_string)
-        time.sleep(3)
+# def emulate_request_of_mqtt():
+#     current_datetime = datetime.now()
+#     formatted_date_time = current_datetime.strftime("%Y-%m-%dT%H:%M:%S.%f")
+#     processed_data = {
+#         "road_state": random.choice(["Good", "Bad"]),
+#         "agent_data": {
+#             "accelerometer": {
+#                 "x": random.randint(-50, 50),
+#                 "y": random.randint(-50, 50),
+#                 "z": random.randint(-50, 50)
+#             },
+#             "gps": {
+#                 "latitude": random.random() * 10,
+#                 "longitude": random.random() * 10
+#             },
+#             "timestamp": formatted_date_time
+#         }
+#     }
+#     json_string = json.dumps(processed_data)
+#     while True:
+#         # Publish the encoded payload
+#         client.publish(MQTT_TOPIC, payload=json_string)
+#         time.sleep(3)
 
 
 # Connect
@@ -123,4 +123,4 @@ client.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT)
 
 # Start
 client.loop_start()
-emulate_request_of_mqtt()
+# emulate_request_of_mqtt()

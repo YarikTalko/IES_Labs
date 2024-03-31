@@ -232,3 +232,16 @@
 1711480729: New client connected from 172.31.0.3:57081 as auto-60F508F7-D6B9-74FD-9E15-7B0C700717F1 (p2, c1, k60).
 1711480798: mosquitto version 2.0.18 terminating
 1711480798: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1711481584: mosquitto version 2.0.18 starting
+1711481584: Config loaded from /mosquitto/config/mosquitto.conf.
+1711481584: Opening ipv4 listen socket on port 1883.
+1711481584: Opening ipv6 listen socket on port 1883.
+1711481584: mosquitto version 2.0.18 running
+1711481584: New connection from 172.31.0.1:59966 on port 1883.
+1711481584: New client connected from 172.31.0.1:59966 as mqtt-explorer-39e008b9 (p2, c1, k60).
+1711481586: New connection from 172.31.0.3:54879 on port 1883.
+1711481586: New client connected from 172.31.0.3:54879 as auto-D3DF118E-1B14-5957-EEB6-8E3F0893099D (p2, c1, k60).
+1711481597: Client mqtt-explorer-39e008b9 disconnected.
+1711481610: Client auto-D3DF118E-1B14-5957-EEB6-8E3F0893099D closed its connection.
+1711481611: mosquitto version 2.0.18 terminating
+1711481611: Saving in-memory database to /mosquitto/data//mosquitto.db.
